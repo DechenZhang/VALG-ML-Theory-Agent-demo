@@ -23,7 +23,12 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Unpack static site\n        run: |\n          rm -rf site\n          mkdir -p site\n          tar -xzf site-public.tar.gz -C site\n\n      - name: Configure Pages
+      - name: Unpack static site
+        run: |
+          rm -rf site
+          mkdir -p site
+          tar -xzf site-public.tar.gz -C site
+      - name: Configure Pages
         uses: actions/configure-pages@v5
       - name: Upload site
         uses: actions/upload-pages-artifact@v3
